@@ -1,0 +1,9 @@
+{
+  "serviceAccountKeyPath": "/Users/Shared/underground/erp2/hr-admin-gac/backend/functions/config/serviceAccountKey.json",
+  "destination": "/Users/Shared/underground/erp2/gac-data",
+  "port": 4545,
+  "monthRangeStart": {
+    "year": 2020,
+    "month": 1
+  }
+}

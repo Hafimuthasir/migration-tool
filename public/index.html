@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GAC Migration Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>GAC Certificate Migration</h1>
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="extract">Extract</button>
+      <button class="tab-btn" data-tab="transform">Transform</button>
+      <button class="tab-btn" data-tab="load">Load</button>
+    </nav>
+  </header>
+
+  <section id="tab-extract" class="tab-panel active">
+    <div class="controls">
+      <button id="extractStartAll" class="btn primary">Start All</button>
+      <button id="extractPause" class="btn">Pause</button>
+      <button id="extractResume" class="btn">Resume</button>
+      <span id="extractPausedBadge" class="badge paused" hidden>Paused</span>
+    </div>
+
+    <section class="summary" id="extractSummary"></section>
+
+    <table id="extractTable">
+      <thead>
+        <tr>
+          <th>Chunk</th>
+          <th>Status</th>
+          <th>Docs</th>
+          <th>Files</th>
+          <th>Downloaded</th>
+          <th>Updated</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="extractBody"></tbody>
+    </table>
+  </section>
+
+  <section id="tab-transform" class="tab-panel">
+    <div class="controls">
+      <button id="transformRun" class="btn primary">Run Transform</button>
+      <span id="transformRunningBadge" class="badge paused" hidden>Running…</span>
+    </div>
+
+    <section class="summary" id="transformSummary"></section>
+
+    <div id="transformError" class="error-box" hidden></div>
+
+    <table id="transformTypesTable" hidden>
+      <thead>
+        <tr>
+          <th>Old type</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody id="transformTypesBody"></tbody>
+    </table>
+
+    <div id="transformUnmapped" hidden>
+      <h3>Unmapped records</h3>
+      <table>
+        <thead>
+          <tr><th>Certificate No</th><th>Old type</th></tr>
+        </thead>
+        <tbody id="transformUnmappedBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="tab-load" class="tab-panel">
+    <div class="controls">
+      <button id="loadStartAll" class="btn primary">Start All</button>
+      <button id="loadPause" class="btn">Pause</button>
+      <button id="loadResume" class="btn">Resume</button>
+      <span id="loadPausedBadge" class="badge paused" hidden>Paused</span>
+    </div>
+
+    <section class="summary" id="loadSummary"></section>
+
+    <table id="loadTable">
+      <thead>
+        <tr>
+          <th>Chunk</th>
+          <th>Status</th>
+          <th>Docs</th>
+          <th>Files</th>
+          <th>Uploaded</th>
+          <th>Updated</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="loadBody"></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
